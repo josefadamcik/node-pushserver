@@ -22,11 +22,11 @@ var configPath = program.config;
 if (configPath) {
     configPath = configPath.indexOf('/') === 0 ? configPath : path.join(process.cwd(), configPath);
     if (!fs.existsSync(configPath)) {
-        console.log('The configuration file doesn\'t exist.');
+        console.log(new Date().toString() + ": " +'The configuration file doesn\'t exist.');
         return program.outputHelp();
     }
 } else {
-    console.log('You must provide a configuration file.');
+    console.log(new Date().toString() + ": " +'You must provide a configuration file.');
     return program.outputHelp();
 }
 
