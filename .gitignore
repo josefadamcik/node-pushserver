@@ -22,3 +22,7 @@ node_modules
 Icon?
 ehthumbs.db
 Thumbs.db
+
+cert/
+config.json
+node_modules/
