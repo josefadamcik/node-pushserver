@@ -20,5 +20,7 @@
             "interval": 43200,
             "batchFeedback": true
         }
-    }
+    },
+
+    "dryRun": false
 }

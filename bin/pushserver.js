@@ -18,6 +18,7 @@ var config = require('../lib/Config'),
 
 program.version(pack.version)
     .option("-c --config <configPath>", "Path to config file")
+    .option("-d --dry-run", "Dry run will not send any notifications, just log them")
     .parse(process.argv);
 
 var configPath = program.config;
@@ -32,5 +33,9 @@ if (configPath) {
     return program.outputHelp();
 }
 
-config.initialize(configPath);
+var configOverrides = {};
+if (program.dryRun) {
+    configOverrides.dryRun = true;
+}
+config.initialize(configPath, configOverrides);
 web.start();
