@@ -12,6 +12,8 @@ var config = require('../lib/Config'),
     pack = require('../package'),
     program = require('commander'),
     fs = require('fs'),
+    log = require('debug')('pushserver:log'),
+    errlog = require('debug')('pushserver:error'),
     path = require('path');
 
 program.version(pack.version)
@@ -22,11 +24,11 @@ var configPath = program.config;
 if (configPath) {
     configPath = configPath.indexOf('/') === 0 ? configPath : path.join(process.cwd(), configPath);
     if (!fs.existsSync(configPath)) {
-        console.log(new Date().toString() + ": " +'The configuration file doesn\'t exist.');
+        errlog('The configuration file doesn\'t exist.');
         return program.outputHelp();
     }
 } else {
-    console.log(new Date().toString() + ": " +'You must provide a configuration file.');
+    errlog('You must provide a configuration file.');
     return program.outputHelp();
 }
 
