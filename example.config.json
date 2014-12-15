@@ -4,7 +4,8 @@
     "mongodbUrl": "mongodb://username:password@localhost/database",
 
     "gcm": {
-        "apiKey": "YOUR_API_KEY_HERE"
+        "apiKey": "YOUR_API_KEY_HERE",
+        "retryCount": 10
     },
 
     "apn": {
