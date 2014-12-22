@@ -1,5 +1,6 @@
 {
     "webPort": 8000,
+    "webHost": null,
 
     "mongodbUrl": "mongodb://username:password@localhost/database",
 
